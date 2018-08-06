@@ -68,13 +68,5 @@ while True:
 
 time.sleep(int(hours)*3600)
 
-block_io.withdraw(amounts=send_amt, to_addresses=addy, pin='81920945')
+block_io.withdraw(amounts=send_amt, to_addresses=addy, pin='[ACCOUNT PIN GOES HERE]')
 print('Sent!')
- 
-
-
-#print block_io.get_address_balance(addresses='2NEPhUU8f3rgwiyPK1ovhpmbkqquNpzaGMy')
-#print balance
-
-
-#block_io.withdraw(amounts='14', to_addresses='2NEPhUU8f3rgwiyPK1ovhpmbkqquNpzaGMy', pin='81920945')
