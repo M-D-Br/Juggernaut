@@ -31,8 +31,8 @@ while True:
    print('-------------------------------')
 
 while True: 
- print('---------------------------------------------------------------')
- addy = raw_input('Please enter the address to which you wish to send your BTC to:\n---------------------------------------------------------------\n')
+ print('-------------------------------------------------------------')
+ addy = raw_input('Please enter the address to which you wish to send your BTC:\n-------------------------------------------------------------\n')
  if len(addy) <= 26 or len(addy) >= 36:
   print("That doesn't look right.")
  else:
