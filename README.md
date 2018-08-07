@@ -11,6 +11,8 @@ Use pip to install the Twilio API:
 
 `pip install twilio`
 
+To make use of the Twilio function, uncomment the necessary lines.
+
 Copy the contents of the _Juggernaut.py_ file into your text editor, and save it with a _.py_ extension. Replace the text in square brackets with the necessary information from your block.io and Twilio accounts.
 
 Run the code in your terminal with:
