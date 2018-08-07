@@ -2,9 +2,13 @@ from block_io import BlockIo
 import json
 import urllib
 import time
+from twilio.rest import Client
 
 block_io = BlockIo
 block_io = BlockIo('[API KEY GOES HERE]', '[ACCOUNT PIN GOES HERE]', 2)
+
+client = Client("[ACCOUNT SID FROM TWILIO]", "[AUTHENTICATION TOKEN FROM TWILIO]")
+
 
 getbalanceurl = "https://block.io/api/v2/get_balance/?api_key=[API KEY GOES HERE]"
 getbalancedecode = urllib.urlopen(getbalanceurl)
@@ -66,7 +70,11 @@ while True:
      break
   break
 
-time.sleep(int(hours)*3600)
+time.sleep(float(hours)*3600/2)
+client.messages.create(to="[PHONE NUMBER TO TEXT WITH UPDATE]", 
+                       from_="[TWILIO-GENERATED PHONE NUMBER]", 
+                       body="I'm halfway there, see you soon!")
+time.sleep(float(hours)*3600/2)
 
 block_io.withdraw(amounts=send_amt, to_addresses=addy, pin='[ACCOUNT PIN GOES HERE]')
 print('Sent!')
