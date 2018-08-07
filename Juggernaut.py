@@ -64,6 +64,21 @@ while True:
   print('-------------------')
  else:
   while True:
+   #Twilio API. Uncomment to use
+   #while True:
+    #print('------------------')
+    #updates = raw_input('Send updates?[y/n]\n------------------\n')
+    #if updates == 'y':
+     #print('---------------')
+     #print('Updates enabled')
+     #print('---------------')
+     #sendupdates = 'to="[PHONE NUMBER TO TEXT WITH UPDATE]", from_="[TWILIO-GENERATED PHONE NUMBER]", body="I\'m halfway there, see you soon!"')
+     #break
+    #else:
+     #print('----------------')
+     #print('Updates disabled')
+     #print('----------------')
+     #break
    print('--------------------------------------------------------------------------------------')
    confset = raw_input('Confirm sending of ' + send_amt + 'BTC to address "' + addy + '" in ' + hours + ' hours?[y/n]\n--------------------------------------------------------------------------------------\n')
    if confset == 'y' or confset == 'Y':
@@ -74,7 +89,10 @@ while True:
   break
 
 time.sleep(float(hours)*3600/2)
-#client.messages.create(to="[PHONE NUMBER TO TEXT WITH UPDATE]", from_="[TWILIO-GENERATED PHONE NUMBER]", body="I'm halfway there, see you soon!")
+try:
+ client.messages.create(sendupdates)
+except:
+ pass
 time.sleep(float(hours)*3600/2)
 
 block_io.withdraw(amounts=send_amt, to_addresses=addy, pin='[ACCOUNT PIN GOES HERE]')
