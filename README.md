@@ -13,12 +13,16 @@ Use pip to install the Twilio API:
 
 To make use of the Twilio function, uncomment the necessary lines.
 
+There is a kill switch (disabled by default) that will delete the program after it successfully executes. Uncomment the requisite modules and the line at the end to activate.
+
 Copy the contents of the _Juggernaut.py_ file into your text editor, and save it with a _.py_ extension. Replace the text in square brackets with the necessary information from your block.io and Twilio accounts.
 
 Run the code in your terminal with:
 
 `sudo python Juggernaut.py`
 
-Transactions cannot execute without the device being kept powered on for the duration of the countdown (a Raspberry Pi would be an ideal computer to run the program on).  
+Transactions cannot execute without the device being kept powered on for the duration of the countdown (a Raspberry Pi would be an ideal computer to run the program on).
+
+
 
 My coding ability is fairly limited, so please feel free to build on this. 
