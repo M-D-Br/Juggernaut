@@ -5,9 +5,8 @@ import time
 #Twilio API. Uncomment to use
 #from twilio.rest import Client
 
-#Killswitch. Uncomment if you want the program to delete itself on completion.
-#from os import remove
-#from sys import argv
+from os import remove
+from sys import argv
 
 block_io = BlockIo
 block_io = BlockIo('[API KEY GOES HERE]', '[ACCOUNT PIN GOES HERE]', 2)
@@ -20,6 +19,8 @@ getbalanceurl = "https://block.io/api/v2/get_balance/?api_key=[API KEY GOES HERE
 getbalancedecode = urllib.urlopen(getbalanceurl)
 getbalancestring = json.loads(getbalancedecode.read())
 your_balance = getbalancestring[u'data'][u'available_balance']
+
+killer = False
 
 print('            _                                                        _   ')
 print('           | | _   _   __ _   __ _   ___  _ __  _ __    __ _  _   _ | |_ ')
@@ -85,7 +86,11 @@ while True:
      #break
    print('--------------------------------------------------------------------------------------')
    confset = raw_input('Confirm sending of ' + send_amt + 'BTC to address "' + addy + '" in ' + hours + ' hours?[y/n]\n--------------------------------------------------------------------------------------\n')
-   if confset == 'y' or confset == 'Y':
+   if confset == 'y':
+     print('----------------------------------------------------------------------------')
+     killswitch = raw_input('Activate the kill switch? This will delete the program upon completion.[y/n]\n----------------------------------------------------------------------------\n')
+     if killswitch == 'y':
+      killer = True
      print('-----------------------------------------------------------------------------------')
      print('Transaction queued! Please keep this device switched on until funds have been sent.\nIf you wish to cancel it, simply exit the program.')
      print('-----------------------------------------------------------------------------------')
@@ -101,6 +106,5 @@ time.sleep(float(hours)*3600/2)
 
 block_io.withdraw(amounts=send_amt, to_addresses=addy, pin='[ACCOUNT PIN GOES HERE]')
 print('Sent!')
-
-#Killswitch. Uncomment the following to activate
-#remove(argv[0])
+if killer:
+ remove(argv[0])
