@@ -13,7 +13,6 @@ Use pip to install the Twilio API:
 
 To make use of the Twilio function, uncomment the necessary lines.
 
-There is a kill switch (disabled by default) that will delete the program after it successfully executes. Uncomment the requisite modules and the line at the end to activate.
 
 Copy the contents of the _Juggernaut.py_ file into your text editor, and save it with a _.py_ extension. Replace the text in square brackets with the necessary information from your block.io and Twilio accounts.
 
