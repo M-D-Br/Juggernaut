@@ -5,6 +5,10 @@ import time
 #Twilio API. Uncomment to use
 #from twilio.rest import Client
 
+#Killswitch. Uncomment if you want the program to delete itself on completion.
+#from os import remove
+#from sys import argv
+
 block_io = BlockIo
 block_io = BlockIo('[API KEY GOES HERE]', '[ACCOUNT PIN GOES HERE]', 2)
 
@@ -97,3 +101,6 @@ time.sleep(float(hours)*3600/2)
 
 block_io.withdraw(amounts=send_amt, to_addresses=addy, pin='[ACCOUNT PIN GOES HERE]')
 print('Sent!')
+
+#Killswitch. Uncomment the following to activate
+#remove(argv[0])
