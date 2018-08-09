@@ -20,7 +20,7 @@ Run the code in your terminal with:
 
 `sudo python Juggernaut.py`
 
-Transactions cannot execute without the device being kept powered on for the duration of the countdown (a Raspberry Pi would be an ideal computer to run the program on).
+Transactions cannot execute without the device being kept powered on for the duration of the countdown (The Raspberry Pi Zero W works well to these ends – I'll update the wiki as there are a couple of tweaks to make to some of its packages).
 
 
 
