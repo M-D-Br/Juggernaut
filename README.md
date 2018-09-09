@@ -1,5 +1,5 @@
 # Juggernaut
-A Python program for putting a timer on Bitcoin transactions. Designed for use cases where individuals may wish to avoid '$5 wrench attacks' at checkpoints or borders.
+A Python program for putting a timer on Bitcoin transactions. Designed for use cases where individuals may wish to avoid '$5 wrench attacks' at checkpoints or borders – note, however, that this doesn't remove the threat altogether. It merely means that one can travel with a wallet that appears empty upon inspection.
 
 Uses the block.io API – use the guide <a href=https://github.com/BlockIo/block_io-python>here</a> to install it using pip. Alternatively, the _JuggernautNoded.py_ file allows you to interact directly with your own node (so as to mitigate counterparty risk) – just install Garzik's <a href=https://github.com/jgarzik/python-bitcoinrpc>python-bitcoinrpc</a> to do so.
 
